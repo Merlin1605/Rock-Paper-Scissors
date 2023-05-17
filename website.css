@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(25, 25, 25);
+    color: white;
+    font-family: Roboto, Arial;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Title{
+    margin-left: 340px;
+}
+
+.move-icon{
+    height: 50px;
+}
+
+.move-button{
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 100%;
+    padding: 40px;
+    margin-right: 20px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.move-button:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+.reset-button{
+    font-family: Roboto, Arial;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 20px;
+}

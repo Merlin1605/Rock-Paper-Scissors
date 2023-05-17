@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .js-subscribe-button{
+            border: none;
+            color: white;
+            background-color: black;
+            padding: 10px 15px 10px 15px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .is-subscribed{
+            transition: 200ms;
+            background-color: rgb(240, 240, 240);
+            color: black;
+        }
+
+        body{
+            font-family: Roboto, Arial;
+        }
+        
+        .cost-input{
+            font-size: 15px;
+            padding: 10px 10px 10px 10px;
+            border-radius: 3px;
+            border-style: solid;
+        }
+
+        .calculate-button{
+            font-size: 15px;
+            padding: 11px 15px;
+            background-color: green;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <button class = "js-subscribe-button" onclick="subscribe()">
+        Subscribe
+    </button>
+    <p>Cost of order(+10$ if the order is bellow $40)</p>
+    <input class="js-cost-input cost-input" placeholder="Cost of order" 
+    onkeydown="enter(event.key)">
+    <button onclick="calculateTotal()" class="calculate-button">Calculate</button>
+    <p class="js-total-cost"></p>
+</body>
+<script>
+    function subscribe()
+    {
+        let buttonElement = document.querySelector('.js-subscribe-button');
+        if(buttonElement.innerText==='Subscribe'){
+            buttonElement.innerText = 'Subscribed';
+            buttonElement.classList.add('is-subscribed');
+        }
+        else{
+            buttonElement.innerText = 'Subscribe';
+            buttonElement.classList.remove('is-subscribed');
+        }
+    }
+
+    function calculateTotal(){
+        let cost = Number(document.querySelector('.js-cost-input').value);
+        console.log(`${cost}`);
+        if(cost < 40)
+        {
+            cost+=10;
+        }
+        document.querySelector('.js-total-cost').innerHTML 
+        = `Your total is $${cost}`;
+    }
+
+    function enter(key){
+        if(key === 'Enter') calculateTotal();
+    }
+</script>
+</html>
