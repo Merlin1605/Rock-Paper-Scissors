@@ -7,7 +7,9 @@ body{
 }
 
 .Title{
-    margin-left: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .move-icon{
